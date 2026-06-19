@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Git">
+  <rect width="64" height="64" rx="14" fill="#24110c"/>
+  <path d="M32 8 56 32 32 56 8 32z" fill="#f05032"/>
+  <path d="M24 22l16 16M24 22v14M24 22h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="24" cy="22" r="4" fill="#fff"/>
+  <circle cx="40" cy="38" r="4" fill="#fff"/>
+  <circle cx="24" cy="36" r="4" fill="#fff"/>
+</svg>

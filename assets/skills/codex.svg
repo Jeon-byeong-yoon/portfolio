@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Codex">
+  <rect width="128" height="128" rx="30" fill="#fafbff"/>
+  <path d="M37 91c-15 0-27-10-27-24 0-12 8-22 20-25 6-14 19-23 34-23 18 0 32 12 36 29 11 3 18 12 18 23 0 13-11 20-25 20z" fill="url(#codexCloud)"/>
+  <path d="M35 64h34v10H35z" fill="#5a68ff" opacity=".38"/>
+  <path d="m43 53 13 14-13 14" fill="none" stroke="#fff" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M75 79h21" fill="none" stroke="#fff" stroke-width="9.5" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="codexCloud" x1="64" x2="64" y1="19" y2="91" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b9a8ff"/>
+      <stop offset=".48" stop-color="#7195ff"/>
+      <stop offset="1" stop-color="#3550ff"/>
+    </linearGradient>
+  </defs>
+</svg>

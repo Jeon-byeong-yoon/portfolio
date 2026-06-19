@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TensorFlow">
+  <rect width="64" height="64" rx="14" fill="#1e160b"/>
+  <path d="M14 21 32 11l18 10-6 4-12-7-12 7z" fill="#ff9f1c"/>
+  <path d="M29 20h6v32h-6z" fill="#ff9f1c"/>
+  <path d="M16 30l6-3 7 4v7l-13-8zm32 0-6-3-7 4v7l13-8z" fill="#ffbf69"/>
+</svg>

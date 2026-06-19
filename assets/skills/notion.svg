@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Notion">
+  <rect width="64" height="64" rx="14" fill="#f5f5f5"/>
+  <path d="M15 14 46 12l5 5v34l-33 2-5-5V17z" fill="#fff" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M24 43V24h5l10 15V24h4v19h-5L28 29v14z" fill="#111"/>
+</svg>

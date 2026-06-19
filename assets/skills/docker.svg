@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Docker">
+  <rect width="128" height="128" rx="30" fill="#2496ed"/>
+  <path d="M20 71h76c-5 20-21 31-45 31-18 0-31-8-38-24H5c4-5 9-7 15-7z" fill="#fff"/>
+  <path d="M91 62c8-7 18-8 28-4-5 8-13 12-24 12z" fill="#fff"/>
+  <circle cx="99" cy="57" r="3" fill="#2496ed"/>
+  <path d="M31 43h12v12H31zm15 0h12v12H46zm15 0h12v12H61zm15 0h12v12H76zM46 28h12v12H46zm15 0h12v12H61zm15 0h12v12H76zM61 13h12v12H61z" fill="#fff"/>
+  <path d="M13 78c11 4 26 5 45 3 15-1 27-5 38-11-7 20-23 32-45 32-18 0-31-8-38-24z" fill="#fff" opacity=".94"/>
+</svg>
