@@ -22,6 +22,13 @@ const projects = [
     ],
     tags: ["Python", "CatBoost", "HistGradientBoosting", "Entity Embedding", "Ensemble", "Calibration", "Time-Series CV"],
     thumb: "aimers",
+    links: [
+      { label: "GitHub 레포", href: "https://github.com/Jeon-byeong-yoon/lg-aimers" },
+      {
+        label: "실험 기록 문서",
+        href: "https://github.com/Jeon-byeong-yoon/lg-aimers/tree/main/docs",
+      },
+    ],
   },
   {
     categories: ["ai"],
@@ -99,6 +106,28 @@ function createHighlightList(highlights) {
   return list;
 }
 
+function createLinkList(links) {
+  const list = document.createElement("div");
+  list.className = "project-links";
+  list.replaceChildren(
+    ...links.map((link) => {
+      const anchor = document.createElement("a");
+      anchor.href = link.href;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.textContent = link.label;
+
+      const arrow = document.createElement("span");
+      arrow.textContent = "↗";
+      anchor.append(" ", arrow);
+
+      return anchor;
+    }),
+  );
+
+  return list;
+}
+
 function createProjectCard(project) {
   const card = document.createElement("article");
   card.className = project.featured ? "project-card is-featured" : "project-card";
@@ -152,6 +181,10 @@ function createProjectCard(project) {
 
   if (project.highlights) {
     blocks.push(createHighlightList(project.highlights));
+  }
+
+  if (project.links) {
+    blocks.push(createLinkList(project.links));
   }
 
   content.replaceChildren(...blocks);

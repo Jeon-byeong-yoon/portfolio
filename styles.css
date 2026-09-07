@@ -742,6 +742,39 @@ p {
   line-height: 1.75;
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+}
+
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.project-links a:hover {
+  border-color: rgba(127, 140, 255, 0.65);
+  background: rgba(127, 140, 255, 0.12);
+}
+
+.project-links a span {
+  color: var(--accent-2);
+  font-size: 11px;
+}
+
 .project-highlights li::before {
   content: "";
   position: absolute;
