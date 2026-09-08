@@ -648,6 +648,39 @@ p {
     linear-gradient(0deg, #7f8cff 0 100%) 100% 100% / 13% 100% no-repeat;
 }
 
+.project-thumb.fallwatch {
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 28px),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 28px),
+    linear-gradient(135deg, rgba(233, 76, 76, 0.2), transparent 52%),
+    #0a0f17;
+}
+
+.project-thumb.fallwatch::before {
+  inset: 30px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 4px;
+  box-shadow:
+    inset 0 52px 0 -51px rgba(255, 255, 255, 0.3),
+    inset 0 -64px 0 -63px rgba(255, 255, 255, 0.3),
+    inset 74px 0 0 -73px rgba(255, 255, 255, 0.3),
+    inset -92px 0 0 -91px rgba(255, 255, 255, 0.3);
+}
+
+.project-thumb.fallwatch::after {
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: #e94c4c;
+  box-shadow:
+    0 0 0 8px rgba(233, 76, 76, 0.26),
+    0 0 0 18px rgba(233, 76, 76, 0.12),
+    0 0 26px 6px rgba(233, 76, 76, 0.35);
+}
+
 .project-content {
   padding: 22px 20px 24px;
 }
