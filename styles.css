@@ -898,6 +898,144 @@ p {
   line-height: 1.75;
 }
 
+.awards {
+  padding: 12px 0 72px;
+}
+
+.awards-heading {
+  margin-bottom: 34px;
+}
+
+.awards-heading h2 {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 34px);
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+}
+
+.award-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  counter-reset: none;
+}
+
+.award-item {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 28px;
+  padding: 28px 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.award-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.award-period {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.award-period strong {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.award-period span {
+  position: relative;
+  padding-left: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.award-period span::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 7px;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.award-body {
+  min-width: 0;
+}
+
+.award-issuer {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+}
+
+.award-body h3 {
+  margin: 8px 0 0;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.award-body p:not(.award-issuer) {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.award-meta {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.award-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(49, 130, 246, 0.1);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.award-status.is-finalist {
+  background: rgba(14, 164, 122, 0.12);
+  color: var(--accent-2);
+}
+
+.award-status.is-ongoing {
+  background: rgba(107, 118, 132, 0.12);
+  color: var(--soft);
+}
+
+.award-note {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .contact {
   min-height: 170px;
   margin-bottom: 28px;
@@ -1016,6 +1154,22 @@ p {
 }
 
 @media (max-width: 700px) {
+  .award-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding: 24px 22px;
+  }
+
+  .award-period {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .award-period span {
+    padding-left: 12px;
+  }
+
   .nav {
     height: auto;
     min-height: 62px;
