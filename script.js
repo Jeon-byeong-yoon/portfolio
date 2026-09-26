@@ -2,7 +2,7 @@ const projects = [
   {
     categories: ["ai", "competition"],
     featured: true,
-    badge: "LG AI연구원 해커톤 · Phase 2",
+    badge: "LG AI연구원 해커톤 · Phase Ⅱ",
     title: "LG Aimers 9기 — 야구 투구 제구 성공 확률 예측",
     role: "3인 팀 · 모델링 · 실험 설계 · 제출 파이프라인",
     summary:
@@ -33,7 +33,7 @@ const projects = [
   {
     categories: ["competition", "db"],
     featured: true,
-    badge: "해커톤 2차 본선 · 5인 팀",
+    badge: "2026 세종 AX 해커톤 본선 · 5인 팀",
     title: "착용형 UWB 실내 낙상 관제 시스템",
     role: "SW 2명 중 측위 파이프라인 · 경보 상태 UX 담당",
     summary:
