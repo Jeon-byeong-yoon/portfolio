@@ -700,6 +700,42 @@ p {
     linear-gradient(0deg, #1b6fe0 0 100%) 100% 100% / 13% 100% no-repeat;
 }
 
+.project-thumb.kbo {
+  background:
+    repeating-linear-gradient(90deg, rgba(2, 8, 23, 0.04) 0 1px, transparent 1px 28px),
+    repeating-linear-gradient(180deg, rgba(2, 8, 23, 0.04) 0 1px, transparent 1px 28px),
+    radial-gradient(circle at 50% 50%, rgba(232, 85, 63, 0.12), transparent 56%),
+    linear-gradient(150deg, #f7f2ec, #f8fafc 62%);
+}
+
+.project-thumb.kbo::before {
+  left: 50%;
+  top: 50%;
+  width: 158px;
+  height: 158px;
+  margin: -79px 0 0 -79px;
+  border: 1px solid rgba(2, 8, 23, 0.18);
+  border-radius: 6px;
+}
+
+.project-thumb.kbo::after {
+  left: 50%;
+  top: 50%;
+  width: 124px;
+  height: 124px;
+  margin: -62px 0 0 -62px;
+  background:
+    linear-gradient(0deg, #7fa9e0 0 100%) 0 0 / 30% 30% no-repeat,
+    linear-gradient(0deg, #efb054 0 100%) 50% 0 / 30% 30% no-repeat,
+    linear-gradient(0deg, #7fa9e0 0 100%) 100% 0 / 30% 30% no-repeat,
+    linear-gradient(0deg, #efb054 0 100%) 0 50% / 30% 30% no-repeat,
+    linear-gradient(0deg, #e8553f 0 100%) 50% 50% / 30% 30% no-repeat,
+    linear-gradient(0deg, #f2c877 0 100%) 100% 50% / 30% 30% no-repeat,
+    linear-gradient(0deg, #9dc0e8 0 100%) 0 100% / 30% 30% no-repeat,
+    linear-gradient(0deg, #f2c877 0 100%) 50% 100% / 30% 30% no-repeat,
+    linear-gradient(0deg, #7fa9e0 0 100%) 100% 100% / 30% 30% no-repeat;
+}
+
 .project-thumb.fallwatch {
   background:
     repeating-linear-gradient(90deg, rgba(2, 8, 23, 0.04) 0 1px, transparent 1px 28px),
