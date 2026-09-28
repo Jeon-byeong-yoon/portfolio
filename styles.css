@@ -700,6 +700,40 @@ p {
     linear-gradient(0deg, #1b6fe0 0 100%) 100% 100% / 13% 100% no-repeat;
 }
 
+.project-thumb.leakdash {
+  background:
+    repeating-linear-gradient(90deg, rgba(2, 8, 23, 0.04) 0 1px, transparent 1px 28px),
+    linear-gradient(150deg, #eef2f8, #f8fafc 62%);
+}
+
+.project-thumb.leakdash::before {
+  left: 34px;
+  right: 30px;
+  top: 50%;
+  height: 112px;
+  margin-top: -56px;
+  border-bottom: 1px solid rgba(2, 8, 23, 0.2);
+  background:
+    linear-gradient(0deg, rgba(232, 85, 63, 0.75) 0 100%) 0 6% / 100% 2px no-repeat,
+    linear-gradient(0deg, rgba(239, 176, 84, 0.85) 0 100%) 0 30% / 100% 2px no-repeat,
+    linear-gradient(0deg, rgba(2, 8, 23, 0.28) 0 100%) 0 62% / 100% 2px no-repeat;
+}
+
+.project-thumb.leakdash::after {
+  left: 40px;
+  right: 36px;
+  top: 50%;
+  height: 112px;
+  margin-top: -56px;
+  background:
+    linear-gradient(0deg, #9db4cf 0 100%) 0 100% / 9% 38% no-repeat,
+    linear-gradient(0deg, #9db4cf 0 100%) 18% 100% / 9% 30% no-repeat,
+    linear-gradient(0deg, #9db4cf 0 100%) 36% 100% / 9% 44% no-repeat,
+    linear-gradient(0deg, #9db4cf 0 100%) 54% 100% / 9% 36% no-repeat,
+    linear-gradient(0deg, #efb054 0 100%) 72% 100% / 9% 62% no-repeat,
+    linear-gradient(0deg, #e8553f 0 100%) 100% 100% / 9% 100% no-repeat;
+}
+
 .project-thumb.kbo {
   background:
     repeating-linear-gradient(90deg, rgba(2, 8, 23, 0.04) 0 1px, transparent 1px 28px),
