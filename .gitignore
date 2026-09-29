@@ -1,0 +1,6 @@
+# 증서·상장 사진 같은 개인 자료. 이 저장소는 GitHub Pages로 공개 배포되므로
+# 실수로 커밋되면 성명과 증서번호가 그대로 웹에 올라간다.
+KakaoTalk_Photo_*
+*.jpeg
+*.jpg
+*.heic
