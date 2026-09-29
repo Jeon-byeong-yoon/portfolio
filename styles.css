@@ -1090,6 +1090,11 @@ p {
   letter-spacing: -0.01em;
 }
 
+.award-status.is-award {
+  background: rgba(180, 83, 9, 0.11);
+  color: #b45309;
+}
+
 .award-status.is-finalist {
   background: rgba(14, 164, 122, 0.12);
   color: var(--accent-2);
