@@ -619,6 +619,45 @@ p {
     104px 48px 0 1px rgba(2, 8, 23, 0.1);
 }
 
+.project-thumb.codevi {
+  background:
+    repeating-linear-gradient(90deg, rgba(2, 8, 23, 0.04) 0 1px, transparent 1px 28px),
+    radial-gradient(circle at 50% 40%, rgba(49, 130, 246, 0.14), transparent 58%),
+    linear-gradient(150deg, #eef2fa, #f8fafc 62%);
+}
+
+.project-thumb.codevi::before {
+  left: 50%;
+  top: 50%;
+  width: 160px;
+  height: 104px;
+  margin: -52px 0 0 -80px;
+  background:
+    linear-gradient(0deg, rgba(2, 8, 23, 0.22) 0 100%) 80px 16px / 1px 15px no-repeat,
+    linear-gradient(0deg, rgba(2, 8, 23, 0.22) 0 100%) 27px 31px / 107px 1px no-repeat,
+    linear-gradient(0deg, rgba(2, 8, 23, 0.22) 0 100%) 27px 31px / 1px 13px no-repeat,
+    linear-gradient(0deg, rgba(2, 8, 23, 0.22) 0 100%) 80px 31px / 1px 13px no-repeat,
+    linear-gradient(0deg, rgba(2, 8, 23, 0.22) 0 100%) 133px 31px / 1px 13px no-repeat,
+    linear-gradient(0deg, rgba(2, 8, 23, 0.22) 0 100%) 27px 60px / 1px 28px no-repeat,
+    linear-gradient(0deg, rgba(2, 8, 23, 0.22) 0 100%) 80px 60px / 1px 28px no-repeat;
+}
+
+.project-thumb.codevi::after {
+  left: 50%;
+  top: 50%;
+  width: 34px;
+  height: 16px;
+  margin: -52px 0 0 -17px;
+  border-radius: 5px;
+  background: #3182f6;
+  box-shadow:
+    -53px 44px 0 #7fa9e0,
+    0 44px 0 #0ea47a,
+    53px 44px 0 #7fa9e0,
+    -53px 88px 0 #efb054,
+    0 88px 0 #9db4cf;
+}
+
 .project-thumb.refactor {
   background:
     radial-gradient(circle at 74% 30%, rgba(49, 130, 246, 0.18), transparent 56%),
