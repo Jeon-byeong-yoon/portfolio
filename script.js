@@ -162,14 +162,6 @@ const projects = [
     tags: ["NestJS", "React 19", "TypeScript", "React Flow", "Tree-sitter", "MySQL", "MCP"],
     thumb: "codevi",
   },
-  {
-    categories: ["db"],
-    title: "Java 객체지향 프로그래밍",
-    summary:
-      "클래스, 객체, 상속, 캡슐화를 써서 기능을 나누고, 나중에 고치기 쉬운 구조로 만드는 법을 익혔습니다.",
-    tags: ["Java", "OOP", "System"],
-    thumb: "java",
-  },
 ];
 
 const projectGrid = document.querySelector("#projectGrid");
