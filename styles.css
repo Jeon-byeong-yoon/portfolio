@@ -556,19 +556,21 @@ p {
 }
 
 .project-thumb.ai-detect::before {
-  width: 104px;
-  height: 104px;
-  left: 32px;
-  top: 30px;
+  width: 98px;
+  height: 98px;
+  left: 30px;
+  top: 50%;
+  margin-top: -49px;
   border-radius: 50%;
   border: 2px solid rgba(2, 8, 23, 0.24);
 }
 
 .project-thumb.ai-detect::after {
-  width: 134px;
-  height: 72px;
-  right: 26px;
-  bottom: 26px;
+  width: 118px;
+  height: 68px;
+  right: 28px;
+  top: 50%;
+  margin-top: -34px;
   border-radius: 10px;
   border: 1px solid rgba(2, 8, 23, 0.08);
   background:
