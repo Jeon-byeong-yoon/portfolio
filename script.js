@@ -116,11 +116,28 @@ const projects = [
   },
   {
     categories: ["ai"],
-    title: "딥페이크 탐지 이진 분류 모델",
+    featured: true,
+    badge: "경진대회 · 2025.10 ~ 11 · 4인 팀",
+    title: "딥페이크 범죄 대응 AI 탐지 모델 — 얼굴 진위 판별",
+    role: "데이터 구축 · 전처리 · 모델 실험",
     summary:
-      "실제 영상과 생성형 AI 영상을 가르는 모델입니다. 프레임을 분리하고 얼굴 영역만 크롭한 뒤 노이즈를 지워 학습 데이터 품질을 올렸습니다.",
-    tags: ["Python", "AI", "Binary Classification"],
+      "공식 학습 데이터셋이 없는 대회라 데이터를 직접 만드는 것부터가 과제였습니다. AI-Hub·FaceForensics++(C23)·DFDC·generated.photos를 섞어 구형 face swap부터 최신 생성형 딥페이크까지 분포에 담았고, 최종 학습셋은 fake 15,646 / real 16,000으로 맞췄습니다. 주최는 행정안전부·한국지능정보사회진흥원, 주관은 국립과학수사연구원입니다.",
+    metrics: [
+      { value: "상위 45%", label: "266팀 중 121위" },
+      { value: "0.6175", label: "최종 Macro F1" },
+      { value: "0.289 → 0.592", label: "데이터 구성만 바꿔 얻은 변화" },
+      { value: "6종", label: "비교한 모델 계열" },
+    ],
+    highlights: [
+      "모델보다 데이터가 성능을 갈랐습니다. 같은 계열 모델에서 생성형 AI 데이터를 넣고 얼굴 중심 크롭을 적용했더니 Macro F1이 0.289에서 0.592로 올랐습니다. 구조가 아니라 모델이 볼 수 있는 단서의 질이 바뀐 결과로 봤습니다.",
+      "전처리를 바꿔도 점수가 움직이지 않는 구간이 반복됐습니다. 원인을 Real 과다로 인한 Fake recall 저하로 보고 있었는데, 실제로는 정적 이미지와 영상 프레임의 분포 차이가 더 근본이었습니다. 프레임에는 압축·블러·모션이 섞여 정지 이미지와 질이 다릅니다.",
+      "그래서 시간 축을 쓰는 모델이 가장 높았습니다. ViT-B/16 0.5133, ConvNeXt-Tiny 0.5476, Swin V2-B 0.5748, EfficientNet-B4 0.5935를 거쳐 프레임 간 temporal 정보를 학습하는 3D CNN이 0.6175로 최고점이었습니다.",
+      "리더보드에서 쓸 수 없는 모델을 걸렀습니다. validation은 안정적인데 제출 점수가 크게 어긋나는 모델, Real을 과다 예측해 Fake recall이 무너지는 모델은 제외했습니다. 정확도가 좋아 보여도 Fake를 놓치면 대회 목적과 맞지 않습니다.",
+      "목표로 잡았던 100위 안에는 들지 못했습니다. 다만 공식 데이터셋이 없는 상태에서 수집·전처리·모델 선정·반복 제출까지 전 과정을 끝까지 돌려본 것이 남았습니다.",
+    ],
+    tags: ["Python", "3D CNN", "EfficientNet", "ConvNeXt", "Swin Transformer", "ViT", "Face Crop", "Macro F1"],
     thumb: "ai-detect",
+    links: [{ label: "회고 글", href: "https://byoon2.tistory.com/18" }],
   },
   {
     categories: ["ai"],
