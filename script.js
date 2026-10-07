@@ -59,7 +59,7 @@ const projects = [
   {
     categories: ["competition", "db"],
     featured: true,
-    badge: "2026 세종 AX 해커톤 본선 · 5인 팀",
+    badge: "2026 세종 AX 해커톤 · SW융합클러스터 인재상 · 팀 Frame work on 5인",
     title: "착용형 UWB 실내 낙상 관제 시스템",
     role: "SW 2명 중 측위 파이프라인 · 경보 상태 UX 담당",
     summary:
