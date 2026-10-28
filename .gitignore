@@ -4,3 +4,4 @@ KakaoTalk_Photo_*
 *.jpeg
 *.jpg
 *.heic
+!assets/profile-photo.jpg
