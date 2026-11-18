@@ -2,7 +2,7 @@ const projects = [
   {
     categories: ["internship"],
     featured: true,
-    badge: "산학 인턴십 · 2026.07.27 ~ 09.30 · 홍익대 Fold팀",
+    badge: "산학 인턴십 · 2026.07.27 ~ 09.26 · 홍익대 Fold팀",
     title: "리크 검사 대시보드 — 한일전기(주) 세종공장",
     role: "5인 팀 · 프론트엔드 메인 — 품질 분석 화면 6종과 알림 계산 계층 담당",
     summary:
@@ -158,7 +158,7 @@ const projects = [
   {
     categories: ["design"],
     featured: true,
-    badge: "종합설계 캡스톤디자인 · 진행 중",
+    badge: "학술제(캡스톤디자인) 우수상 · 4위 · 5인 팀",
     title: "CodeVi — 코드 구조 시각화 플랫폼",
     role: "품질 메트릭 API와 상세 시각화 화면 담당",
     summary:
