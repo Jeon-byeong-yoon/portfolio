@@ -23,6 +23,7 @@ const projects = [
     ],
     tags: ["Python", "PySide6", "QPainter", "SQLite", "pandas", "SPC", "unittest"],
     thumb: "leakdash",
+    image: "assets/leakdash-dashboard.png",
   },
   {
     categories: ["ai", "competition"],
@@ -48,6 +49,7 @@ const projects = [
     ],
     tags: ["Python", "CatBoost", "HistGradientBoosting", "Entity Embedding", "Ensemble", "Calibration", "Time-Series CV"],
     thumb: "aimers",
+    image: "assets/aimers-model.png",
     links: [
       { label: "GitHub 레포", href: "https://github.com/Jeon-byeong-yoon/lg-aimers" },
       {
@@ -80,6 +82,7 @@ const projects = [
     ],
     tags: ["TypeScript", "Node.js", "UWB", "Trilateration", "SSE", "Signal Smoothing", "node:test"],
     thumb: "fallwatch",
+    image: "assets/uwb-fall-alert.png",
   },
   {
     categories: ["ai"],
@@ -105,6 +108,7 @@ const projects = [
     ],
     tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind", "OpenAI API", "Monte Carlo", "Vitest"],
     thumb: "kbo",
+    image: "assets/kbo-ai-brief.png",
     links: [
       { label: "라이브 데모", href: "https://kbo-ai-brief-three.vercel.app" },
       { label: "GitHub 레포", href: "https://github.com/Jeon-byeong-yoon/kbo-ai-brief" },
@@ -180,11 +184,90 @@ const projects = [
     ],
     tags: ["NestJS", "React 19", "TypeScript", "React Flow", "Tree-sitter", "MySQL", "MCP"],
     thumb: "codevi",
+    image: "assets/codevi-metrics.png",
+  },
+  {
+    categories: ["other"],
+    featured: true,
+    title: "뉴노멀 화재대피체험 시뮬레이터",
+    role: "프로젝트",
+    summary: "",
+    tags: [],
+    thumb: "newnormal",
+    image: "assets/exrunner-hero.png",
   },
 ];
 
 const projectGrid = document.querySelector("#projectGrid");
 const categoryButtons = [...document.querySelectorAll(".tab")];
+
+const projectDisplay = {
+  leakdash: {
+    title: "한일전기 품질 대시보드",
+    intro: "펌프 리크 검사 기록을 표준화해 모델별 불량률과 품질 변화를 살펴보는 현장 대시보드입니다.",
+  },
+  aimers: {
+    title: "투구 제구 성공 확률 예측",
+    intro: "데이터와 실험을 다시 설계해 공식 기준 점수보다 182.5점 높였습니다.",
+  },
+  fallwatch: {
+    title: "착용형 UWB 낙상 관제",
+    intro: "층별 위치와 가속도·LightGBM 기반 낙상을 실시간 관제하고, 사생활 구역에서는 위치 정보 없이 낙상만 감지합니다.",
+  },
+  kbo: {
+    title: "KBO AI Brief",
+    intro: "실시간 경기, 기록실, 우승 확률을 한 화면에 모은 야구 대시보드입니다.",
+  },
+  "ai-detect": {
+    title: "AI 딥페이크 탐지",
+    intro: "데이터 구성과 얼굴 크롭을 바꿔 탐지 Macro F1을 0.289에서 0.592로 높였습니다.",
+  },
+  forecast: {
+    title: "119 신고량 예측",
+    intro: "기상 데이터와 신고 이력으로 12개 지점의 수요를 예측했습니다.",
+  },
+  database: {
+    title: "헬스케어 DB 설계",
+    intro: "건강 기록을 관리하기 위한 관계형 데이터 구조를 설계했습니다.",
+  },
+  codevi: {
+    title: "CodeVi — 코드 구조 시각화",
+    intro: "코드 구조를 탐색하고 품질 지표를 함께 읽는 개발자 도구입니다.",
+  },
+  newnormal: {
+    title: "뉴노멀 화재대피체험 시뮬레이터",
+    intro: "2,824만 스플랫 실사 공간에 물리 기반 화재·연기를 구현하고, 운영자 통제 아래 체험자의 초기 진화와 대피를 훈련하는 UE5.8 시뮬레이터입니다.",
+  },
+};
+
+const categoryLabels = {
+  internship: "INDUSTRY",
+  ai: "AI · DATA",
+  competition: "CHALLENGE",
+  db: "SYSTEMS",
+  design: "PRODUCT",
+  other: "PROJECT",
+};
+
+const smallProjectThumbs = new Set(["ai-detect", "forecast", "database"]);
+const smallProjectList = document.querySelector("#smallProjectList");
+const smallProjectsSection = document.querySelector("#smallProjects");
+
+function createSmallProject(project) {
+  const item = document.createElement("article");
+  item.className = "small-project-item";
+
+  const title = document.createElement("h4");
+  title.textContent = projectDisplay[project.thumb].title;
+
+  const summary = document.createElement("p");
+  summary.textContent = projectDisplay[project.thumb].intro;
+
+  const category = document.createElement("span");
+  category.textContent = categoryLabels[project.categories[0]];
+  item.replaceChildren(category, title, summary);
+  return item;
+}
 
 function createMetricList(metrics) {
   const list = document.createElement("dl");
@@ -239,84 +322,89 @@ function createLinkList(links) {
   return list;
 }
 
-function createProjectCard(project) {
+function createProjectCard(project, positionIndex) {
   const card = document.createElement("article");
-  card.className = project.featured ? "project-card is-featured" : "project-card";
+  card.className = "project-card is-featured";
   card.dataset.category = project.categories.join(" ");
 
   const thumb = document.createElement("div");
   thumb.className = `project-thumb ${project.thumb}`;
-  thumb.setAttribute("aria-hidden", "true");
+  thumb.setAttribute("role", "img");
+  thumb.setAttribute("aria-label", `${projectDisplay[project.thumb].title} 대표 이미지 자리`);
+
+  if (project.image) {
+    const image = document.createElement("img");
+    image.src = project.image;
+    image.alt = `${projectDisplay[project.thumb].title} 프로젝트 화면`;
+    thumb.append(image);
+  } else {
+    const placeholder = document.createElement("div");
+    placeholder.className = "project-image-placeholder";
+    const number = document.createElement("span");
+    number.className = "placeholder-number";
+    number.textContent = String(positionIndex + 1).padStart(2, "0");
+    const note = document.createElement("span");
+    note.className = "placeholder-note";
+    note.textContent = "대표 이미지 추가 예정";
+    placeholder.replaceChildren(number, note);
+    thumb.append(placeholder);
+  }
 
   const content = document.createElement("div");
   content.className = "project-content";
 
-  const blocks = [];
-
-  if (project.badge) {
-    const badge = document.createElement("p");
-    badge.className = "project-badge";
-    badge.textContent = project.badge;
-    blocks.push(badge);
-  }
+  const index = document.createElement("p");
+  index.className = "project-index";
+  index.textContent = `PROJECT ${String(positionIndex + 1).padStart(2, "0")} · ${categoryLabels[project.categories[0]] || "PROJECT"}`;
 
   const title = document.createElement("h3");
-  title.textContent = project.title;
-  blocks.push(title);
-
-  if (project.role) {
-    const role = document.createElement("p");
-    role.className = "project-role";
-    role.textContent = project.role;
-    blocks.push(role);
-  }
-
-  const tags = document.createElement("div");
-  tags.className = "project-tags";
-  tags.replaceChildren(
-    ...project.tags.map((tag) => {
-      const item = document.createElement("span");
-      item.textContent = tag;
-      return item;
-    }),
-  );
-  blocks.push(tags);
+  title.textContent = projectDisplay[project.thumb].title;
 
   const summary = document.createElement("p");
-  summary.textContent = project.summary;
-  blocks.push(summary);
+  summary.className = "project-summary";
+  summary.textContent = projectDisplay[project.thumb].intro;
 
-  if (project.metrics) {
-    blocks.push(createMetricList(project.metrics));
-  }
-
-  if (project.highlights) {
-    blocks.push(createHighlightList(project.highlights));
+  const metric = project.metrics?.[0];
+  if (metric) {
+    const proof = document.createElement("p");
+    proof.className = "project-proof";
+    proof.innerHTML = `<strong>${metric.value}</strong><span>${metric.label}</span>`;
+    content.append(index, title, summary, proof);
+  } else {
+    content.append(index, title, summary);
   }
 
   if (project.links) {
-    blocks.push(createLinkList(project.links));
+    content.append(createLinkList(project.links.slice(0, 1)));
   }
 
-  content.replaceChildren(...blocks);
   card.replaceChildren(thumb, content);
 
   return card;
 }
 
 function renderProjects(category = "all") {
+  const mainProjects = projects.filter((project) => !smallProjectThumbs.has(project.thumb));
   const visibleProjects =
     category === "all"
-      ? projects
-      : projects.filter((project) => project.categories.includes(category));
+      ? mainProjects
+      : mainProjects.filter((project) => project.categories.some((item) => item.trim().toLowerCase() === category));
 
-  projectGrid.replaceChildren(...visibleProjects.map(createProjectCard));
+  projectGrid.replaceChildren(...visibleProjects.map((project, index) => createProjectCard(project, index)));
+  const secondary = projects.filter((project) => smallProjectThumbs.has(project.thumb));
+  smallProjectList.replaceChildren(...secondary.map(createSmallProject));
+  smallProjectsSection.hidden = category !== "all" || secondary.length === 0;
 }
 
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    categoryButtons.forEach((item) => item.classList.toggle("is-active", item === button));
-    renderProjects(button.dataset.category);
+    const category = button.dataset.category;
+    categoryButtons.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
+    });
+    renderProjects(category);
   });
 });
 
