@@ -5,3 +5,7 @@ KakaoTalk_Photo_*
 *.jpg
 *.heic
 !assets/profile-photo.jpg
+
+# macOS metadata and local portfolio source materials
+.DS_Store
+/image/
