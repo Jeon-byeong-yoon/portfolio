@@ -168,6 +168,31 @@ const projects = [
     links: [{ label: "GitHub 레포", href: "https://github.com/Jeon-byeong-yoon/requirements-dataset" }],
   },
   {
+    categories: ["db", "ai"],
+    featured: true,
+    badge: "개인 사이드 프로젝트 · MCP stdio 서버",
+    title: "Code Smell Detection MCP — Python 정적 분석 MCP 서버",
+    role: "혼자 기획하고 개발 — JSON-RPC 2.0 stdio 브리지 · 무의존성 ZIP 패키징 · 응답 정규화",
+    summary:
+      "Claude Code·Cursor·Codex·Antigravity 같은 IDE 에이전트에서 로컬 Python 프로젝트의 코드 스멜 정적 분석을 곧바로 실행할 수 있게 만든 MCP(Model Context Protocol) stdio 서버입니다. 엔드유저 PC에 Python이나 분석기를 따로 설치하지 않아도 로컬 .py 소스를 수집·압축해 분석 서비스로 전달하고, 결과를 에이전트가 읽기 좋은 구조로 정규화해 돌려줍니다.",
+    metrics: [
+      { value: "4종 IDE", label: "Claude · Cursor · Codex · Antigravity 호환" },
+      { value: "0개", label: "엔드유저 Python · 분석기 설치 의존성" },
+      { value: "2모드", label: "HTTP 원격 분석 · CLI 로컬 실행" },
+      { value: "2,000파일", label: "상한 초과 시 부분 분석 차단 가드" },
+    ],
+    highlights: [
+      "외부 압축 라이브러리 없이 Node 내장 zlib DEFLATE만으로 로컬 .py 파일을 모아 ZIP 바이너리를 직접 조립합니다(src/zip.ts). .git·venv·node_modules·심링크는 제외해 순환 참조나 의도치 않은 외부 반출을 막았습니다.",
+      "파일 수(2,000개)나 총 크기(20MB) 상한을 넘으면 일부만 잘라 분석하지 않고 즉시 실패시킵니다. 조용히 잘라내면 에이전트와 사용자가 '코드 스멜이 없다'고 오해하기 때문입니다.",
+      "분석기 서버가 지원하지 않는 only(특정 스멜 필터)·summaryOnly(요약 전용)·limitPerGroup(그룹당 개수 제한) 옵션을 MCP 프록시 계층에서 후처리해 에이전트의 컨텍스트 윈도우 낭비를 줄였습니다.",
+      "CLI 모드에서는 하이픈(-)으로 시작하는 projectPath를 거부하고 shell: false로만 프로세스를 띄워 플래그·셸 주입을 원천 차단했습니다.",
+    ],
+    tags: ["TypeScript", "Node.js", "MCP", "JSON-RPC 2.0", "zlib DEFLATE", "Static Analysis"],
+    thumb: "codesmell",
+    image: "assets/codesmell-mcp-architecture.svg",
+    links: [{ label: "GitHub 레포", href: "https://github.com/Jeon-byeong-yoon/code-smell-detection-mcp" }],
+  },
+  {
     categories: ["ai"],
     title: "119 신고 건수 예측",
     summary:
@@ -249,6 +274,10 @@ const projectDisplay = {
   reqdataset: {
     title: "요구사항 대조 학습 데이터셋",
     intro: "공개 소프트웨어 요구사항의 중복을 제거하고, 표현이 달라도 의미가 같거나 표현이 비슷해도 의미가 다른 문장 쌍을 만들어 대조 학습용 데이터셋을 구축했습니다.",
+  },
+  codesmell: {
+    title: "Code Smell Detection MCP",
+    intro: "IDE 코딩 에이전트가 별도 분석기 설치 없이 로컬 Python 프로젝트의 코드 스멜 정적 분석을 호출하도록 연결하는 MCP stdio 서버입니다.",
   },
   forecast: {
     title: "119 신고량 예측",

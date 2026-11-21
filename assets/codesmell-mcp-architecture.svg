@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+<title id="title">Code Smell Detection MCP 프로토콜 흐름 및 도구 명세</title>
+<rect width="960" height="540" fill="#111315"/>
+<g font-family="system-ui, sans-serif" fill="#f2f0e9">
+<text x="56" y="80" font-size="34" font-weight="700">Code Smell Detection MCP</text>
+<text x="56" y="118" font-size="18" fill="#a3aab4">IDE Agent ──stdio (JSON-RPC 2.0)──▶ MCP Proxy ──ZIP / HTTP──▶ PyExamine</text>
+<text x="56" y="188" fill="#8ac2ff" font-size="18">파라미터 (analyze_python_smells)</text>
+<text x="410" y="188" fill="#8ac2ff" font-size="18">구분</text>
+<text x="540" y="188" fill="#8ac2ff" font-size="18">동작 및 컨텍스트 제어</text>
+<path d="M56 210H904" stroke="#343941"/>
+<text x="56" y="251" font-size="24" font-weight="700" fill="#8ac2ff">projectPath</text>
+<text x="410" y="251" font-size="22">필수</text>
+<text x="540" y="251" font-size="22">.py 수집 · 무의존성 DEFLATE ZIP 패키징</text>
+<path d="M56 275H904" stroke="#343941"/>
+<text x="56" y="316" font-size="24">only</text>
+<text x="410" y="316" font-size="22">선택</text>
+<text x="540" y="316" font-size="22">특정 스멜 detector만 필터링해 반환</text>
+<path d="M56 340H904" stroke="#343941"/>
+<text x="56" y="381" font-size="24">summaryOnly</text>
+<text x="410" y="381" font-size="22">선택</text>
+<text x="540" y="381" font-size="22">상세 그룹을 생략하고 전체 요약만 반환</text>
+<path d="M56 405H904" stroke="#343941"/>
+<text x="56" y="446" font-size="24">limitPerGroup</text>
+<text x="410" y="446" font-size="22">선택</text>
+<text x="540" y="446" font-size="22">그룹별 반환 상한 적용 · 전체 집계 유지</text>
+</g>
+</svg>
