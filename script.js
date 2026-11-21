@@ -145,6 +145,29 @@ const projects = [
   },
   {
     categories: ["ai"],
+    featured: true,
+    badge: "개인 사이드 프로젝트 · 데이터 파이프라인",
+    title: "소프트웨어 요구사항 대조 학습 데이터셋 구축",
+    role: "혼자 기획하고 개발 — 데이터 정제 · Hard Pair 증강 · 5-Seed 검증",
+    summary:
+      "소프트웨어 요구사항 분석·분류에 쓸 대조 학습(Contrastive Learning)용 문장 쌍 데이터셋을 구축하는 파이프라인입니다. 공개 요구사항 데이터셋(PROMISE·PURE·FNFC) 사이의 파생 관계와 중복을 먼저 걷어내고, 어휘 유사도(TF-IDF)와 의미 유사도(Sentence Embedding) 4분면 분석으로 Hard Positive/Negative 쌍을 구성해 누수 없는 분할과 5-seed 교차 평가까지 수행했습니다.",
+    metrics: [
+      { value: "11,842쌍", label: "대조 학습 데이터셋 구축" },
+      { value: "+0.0216", label: "교차 LLM 평가셋 PR-AUC 개선" },
+      { value: "80/80건", label: "블라인드 검수 의미 일치율" },
+      { value: "5-Seed", label: "품질 게이트(G1~G5) 통과" },
+    ],
+    highlights: [
+      "기존 규칙 기반 증강(단어 치환)은 평균 어휘 유사도가 0.988로 너무 높아 모델이 어휘 일치만 보고 맞히는 한계가 있었습니다. 어휘 유사도는 낮추고 의미 유사도는 유지하는 LLM Hard Positive와 Corpus Mining 기반 Hard Negative(TF-IDF ≥ 0.50)로 4분면을 다시 채웠습니다.",
+      "조동사(Modal)만 바꾼 증강 400건을 실험했을 때는 자연스러움 검수가 20/50건에 그치고 5개 시드 모두에서 교차 평가셋 PR-AUC가 낮아져 해당 경로를 종료했습니다.",
+      "시간 조건·수량·행위자·극성 등 4개 비-Modal 의미 슬롯과 구문 재배열을 결합한 대칭 쌍을 설계해 블라인드 검수 의미 일치율 100%(80/80건), 자연스러움 92.5%(74/80건)로 사전 등록 품질 게이트(G1~G5)를 통과했고, 교차 LLM 평가셋에서 5개 시드 모두 PR-AUC(+0.0216)를 개선했습니다.",
+    ],
+    tags: ["Python", "PyTorch", "Sentence-Transformers", "scikit-learn", "pandas", "Contrastive Learning"],
+    thumb: "reqdataset",
+    links: [{ label: "GitHub 레포", href: "https://github.com/Jeon-byeong-yoon/requirements-dataset" }],
+  },
+  {
+    categories: ["ai"],
     title: "119 신고 건수 예측",
     summary:
       "소방 데이터에 기상청 날씨 데이터를 붙이고, 12개 지점마다 전처리를 따로 짜서 LSTM 시계열 예측 모델을 만들었습니다.",
@@ -222,6 +245,10 @@ const projectDisplay = {
     title: "AI 딥페이크 탐지",
     intro: "데이터 구성과 얼굴 크롭을 바꿔 탐지 Macro F1을 0.289에서 0.592로 높였습니다.",
   },
+  reqdataset: {
+    title: "요구사항 대조 학습 데이터셋",
+    intro: "공개 요구사항 데이터의 파생·중복을 제거하고 어휘·의미 유사도 4분면 분석과 비-Modal 증강으로 대조 학습용 Hard Pair를 구축했습니다.",
+  },
   forecast: {
     title: "119 신고량 예측",
     intro: "기상 데이터와 신고 이력으로 12개 지점의 수요를 예측했습니다.",
@@ -249,7 +276,7 @@ const categoryLabels = {
   other: "PROJECT",
 };
 
-const smallProjectThumbs = new Set(["ai-detect", "forecast", "database"]);
+const smallProjectThumbs = new Set(["ai-detect", "reqdataset", "forecast", "database"]);
 const smallProjectList = document.querySelector("#smallProjectList");
 const smallProjectsSection = document.querySelector("#smallProjects");
 
@@ -265,7 +292,11 @@ function createSmallProject(project) {
 
   const category = document.createElement("span");
   category.textContent = categoryLabels[project.categories[0]];
-  item.replaceChildren(category, title, summary);
+  if (project.links?.length) {
+    item.replaceChildren(category, title, summary, createLinkList(project.links.slice(0, 1)));
+  } else {
+    item.replaceChildren(category, title, summary);
+  }
   return item;
 }
 
