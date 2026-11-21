@@ -189,7 +189,7 @@ const projects = [
     ],
     tags: ["TypeScript", "Node.js", "MCP", "JSON-RPC 2.0", "zlib DEFLATE", "Static Analysis"],
     thumb: "codesmell",
-    image: "assets/codesmell-mcp-architecture.svg",
+    image: "assets/codesmell-mcp-flow.svg",
     links: [{ label: "GitHub 레포", href: "https://github.com/Jeon-byeong-yoon/code-smell-detection-mcp" }],
   },
   {
