@@ -247,7 +247,7 @@ const projectDisplay = {
   },
   reqdataset: {
     title: "요구사항 대조 학습 데이터셋",
-    intro: "공개 요구사항 데이터의 파생·중복을 제거하고 어휘·의미 유사도 4분면 분석과 비-Modal 증강으로 대조 학습용 Hard Pair를 구축했습니다.",
+    intro: "공개 소프트웨어 요구사항의 중복을 제거하고, 표현이 달라도 의미가 같거나 표현이 비슷해도 의미가 다른 문장 쌍을 만들어 대조 학습용 데이터셋을 구축했습니다.",
   },
   forecast: {
     title: "119 신고량 예측",
@@ -422,9 +422,11 @@ function renderProjects(category = "all") {
       : mainProjects.filter((project) => project.categories.some((item) => item.trim().toLowerCase() === category));
 
   projectGrid.replaceChildren(...visibleProjects.map((project, index) => createProjectCard(project, index)));
-  const secondary = projects.filter((project) => smallProjectThumbs.has(project.thumb));
+  const secondary = projects.filter(
+    (project) => smallProjectThumbs.has(project.thumb) && (category === "all" || project.categories.includes(category))
+  );
   smallProjectList.replaceChildren(...secondary.map(createSmallProject));
-  smallProjectsSection.hidden = category !== "all" || secondary.length === 0;
+  smallProjectsSection.hidden = secondary.length === 0;
 }
 
 categoryButtons.forEach((button) => {
