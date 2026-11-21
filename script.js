@@ -164,6 +164,7 @@ const projects = [
     ],
     tags: ["Python", "PyTorch", "Sentence-Transformers", "scikit-learn", "pandas", "Contrastive Learning"],
     thumb: "reqdataset",
+    image: "assets/requirements-similarity-table.svg",
     links: [{ label: "GitHub 레포", href: "https://github.com/Jeon-byeong-yoon/requirements-dataset" }],
   },
   {
@@ -276,7 +277,7 @@ const categoryLabels = {
   other: "PROJECT",
 };
 
-const smallProjectThumbs = new Set(["ai-detect", "reqdataset", "forecast", "database"]);
+const smallProjectThumbs = new Set(["ai-detect", "forecast", "database"]);
 const smallProjectList = document.querySelector("#smallProjectList");
 const smallProjectsSection = document.querySelector("#smallProjects");
 

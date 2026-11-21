@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+<title id="title">요구사항 쌍의 어휘·의미 유사도 4분면</title>
+<rect width="960" height="540" fill="#111315"/>
+<g font-family="system-ui, sans-serif" fill="#f2f0e9">
+<text x="56" y="80" font-size="34" font-weight="700">요구사항 쌍의 유사도 4분면</text>
+<text x="56" y="118" font-size="18" fill="#a3aab4">Requirements Dataset · README</text>
+<text x="56" y="188" fill="#8ac2ff" font-size="18">영역</text>
+<text x="390" y="188" fill="#8ac2ff" font-size="18">어휘 유사도</text>
+<text x="650" y="188" fill="#8ac2ff" font-size="18">의미 유사도</text>
+<path d="M56 210H904" stroke="#343941"/>
+<text x="56" y="251" font-size="24">Easy Positive</text>
+<text x="390" y="251" font-size="24">높음</text>
+<text x="650" y="251" font-size="24">높음</text>
+<path d="M56 275H904" stroke="#343941"/>
+<text x="56" y="316" font-size="24">Hard Positive</text>
+<text x="390" y="316" font-size="24">낮음</text>
+<text x="650" y="316" font-size="24">높음</text>
+<path d="M56 340H904" stroke="#343941"/>
+<text x="56" y="381" font-size="24">Hard Negative</text>
+<text x="390" y="381" font-size="24">높음</text>
+<text x="650" y="381" font-size="24">낮음</text>
+<path d="M56 405H904" stroke="#343941"/>
+<text x="56" y="446" font-size="24">Easy Negative</text>
+<text x="390" y="446" font-size="24">낮음</text>
+<text x="650" y="446" font-size="24">낮음</text>
+</g>
+</svg>
