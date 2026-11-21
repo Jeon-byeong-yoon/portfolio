@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">IDE에서 MCP 서버를 거쳐 PyExamine으로 이어지는 분석 흐름</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#8ac2ff"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#111315"/>
+  <g font-family="system-ui, sans-serif" fill="#f2f0e9">
+    <text x="56" y="80" font-size="34" font-weight="700">Code Smell Detection MCP</text>
+    <text x="56" y="118" font-size="18" fill="#a3aab4">Python 코드 스멜 분석 요청 흐름</text>
+    <g fill="#171b20" stroke="#343941">
+      <rect x="56" y="218" width="180" height="116" rx="8"/>
+      <rect x="350" y="218" width="260" height="116" rx="8"/>
+      <rect x="724" y="218" width="180" height="116" rx="8"/>
+    </g>
+    <g stroke="#8ac2ff" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M246 276H340"/>
+      <path d="M620 276H714"/>
+    </g>
+    <g text-anchor="middle">
+      <g font-size="18" fill="#8ac2ff">
+        <text x="293" y="253">stdio</text>
+        <text x="667" y="253">HTTP</text>
+      </g>
+      <g font-size="22" font-weight="700">
+        <text x="146" y="269">IDE</text>
+        <text x="480" y="269">Code Smell MCP</text>
+        <text x="814" y="269">PyExamine</text>
+      </g>
+      <g font-size="16" fill="#a3aab4">
+        <text x="146" y="302">MCP 클라이언트</text>
+        <text x="480" y="302">로컬 Python 파일 ZIP 생성</text>
+        <text x="814" y="302">정적 분석 서버</text>
+      </g>
+    </g>
+    <path d="M56 404H904" stroke="#343941"/>
+    <text x="56" y="445" font-size="19" fill="#a3aab4">분석 결과는 MCP 도구 응답 형식으로 변환해 IDE에 반환합니다.</text>
+  </g>
+</svg>
