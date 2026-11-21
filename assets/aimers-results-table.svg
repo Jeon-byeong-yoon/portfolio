@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+<title id="title">LG Aimers 상위 5개 제출 점수</title>
+<rect width="960" height="540" fill="#111315"/>
+<g font-family="system-ui, sans-serif" fill="#f2f0e9">
+<text x="56" y="80" font-size="34" font-weight="700">투구 제구 예측 · 상위 5개 제출</text>
+<text x="56" y="118" font-size="18" fill="#a3aab4">LG Aimers 9기 · GitHub README</text>
+<g font-size="18" fill="#8ac2ff">
+<text x="56" y="176">순위</text>
+<text x="280" y="176">버전</text>
+<text x="904" y="176" text-anchor="end">Public Score</text>
+</g>
+<path d="M56 195H904" stroke="#343941"/>
+<g font-size="24" fill="#8ac2ff" font-weight="700">
+<text x="56" y="232">1</text>
+<text x="280" y="232">V199</text>
+<text x="904" y="232" text-anchor="end">1083.2462</text>
+</g>
+<path d="M56 251H904" stroke="#343941"/>
+<g font-size="24">
+<text x="56" y="288">2</text>
+<text x="280" y="288">V196</text>
+<text x="904" y="288" text-anchor="end">1082.8399</text>
+</g>
+<path d="M56 307H904" stroke="#343941"/>
+<g font-size="24">
+<text x="56" y="344">3</text>
+<text x="280" y="344">V193</text>
+<text x="904" y="344" text-anchor="end">1076.9783</text>
+</g>
+<path d="M56 363H904" stroke="#343941"/>
+<g font-size="24">
+<text x="56" y="400">4</text>
+<text x="280" y="400">V189</text>
+<text x="904" y="400" text-anchor="end">1071.4549</text>
+</g>
+<path d="M56 419H904" stroke="#343941"/>
+<g font-size="24">
+<text x="56" y="456">5</text>
+<text x="280" y="456">V187</text>
+<text x="904" y="456" text-anchor="end">1067.8618</text>
+</g>
+</g>
+</svg>

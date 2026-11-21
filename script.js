@@ -49,7 +49,7 @@ const projects = [
     ],
     tags: ["Python", "CatBoost", "HistGradientBoosting", "Entity Embedding", "Ensemble", "Calibration", "Time-Series CV"],
     thumb: "aimers",
-    image: "assets/aimers-model.png",
+    image: "assets/aimers-results-table.svg",
     links: [
       { label: "GitHub 레포", href: "https://github.com/Jeon-byeong-yoon/lg-aimers" },
       {
